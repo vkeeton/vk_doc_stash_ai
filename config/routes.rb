@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :docs, only: %i[index update create destory]
 
-  resources :chats, only: %i[index show new create update]
+  resources :chats, only: %i[index show new create update] do
+    resources :messages, only: :create
+  end
 end
