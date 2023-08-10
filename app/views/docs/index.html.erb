@@ -1,6 +1,18 @@
-<h1>Docs Index</h1>
-<ul>
-<% @docs.each do |doc| %>
-  <li><%= doc.file_name %></li>
-<% end %>
-</ul>
+<div class="container">
+  <div class="leftside">
+    <div class="cards-container">
+    <h1>Your DocStash</h1>
+    <h5>Filter here</h5>
+    <div class="cards">
+        <% @docs.each do |doc| %>
+          <div class="card">
+            <%= doc.file_name %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    </div>
+    <div class="upload"></div>
+  </div>
+  <div class="chat"></div>
+</div>
