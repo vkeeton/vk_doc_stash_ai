@@ -1,2 +1,54 @@
-// Import page-specific CSS files here.
-@import "home";
+// app/assets/stylesheets/docs.scss
+
+/* Styles for the DocsStash page */
+.container {
+  display: flex;
+  margin-top: 20px;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+.leftside {
+
+}
+.chat {
+
+}
+.cards-container {
+  width: 50%;
+  height: 65%;
+}
+
+h1 {
+  font-size: 36px;
+  color: rgb(231, 230, 230);
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+h5 {
+  font-size: 18px;
+  color: #777;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Reduce the width of the cards container */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px; /* Center the container horizontally */
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+
+  /* Add hover effect */
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
