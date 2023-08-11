@@ -23,7 +23,7 @@
             <% if current_user.photo.attached? %>
             <%= cl_image_tag (current_user.photo.key), class: "avatar", alt: "dropdown menu" %>
             <% else %>
-            <img src="https://res.cloudinary.com/dpvwejoeb/image/upload/v1691671929/photo-1511367461989-f85a21fda167_r8otbi.avif" />
+            <img src="https://res.cloudinary.com/dpvwejoeb/image/upload/v1691671929/photo-1511367461989-f85a21fda167_r8otbi.avif" width="50" height="28"/>
             <% end %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
