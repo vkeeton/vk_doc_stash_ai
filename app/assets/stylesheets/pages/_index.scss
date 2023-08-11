@@ -20,31 +20,47 @@
 
 h1 {
   font-size: 36px;
-  color: rgb(231, 230, 230);
+  color: #323E41;
   margin-bottom: 10px;
   font-family: 'Poppins', sans-serif;
 }
 
 h5 {
   font-size: 18px;
-  color: #777;
+  color: rgba(38, 42, 65, 0.5);
   margin-bottom: 20px;
   font-family: 'Poppins', sans-serif;
+}
+
+p {
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 4px;
+  margin-bottom: 4px;
+  color: rgba(38, 42, 65, 0.5);
 }
 
 /* Reduce the width of the cards container */
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px; /* Center the container horizontally */
+  gap: 20px;
+  font-size: 24px;
+  color: white;
+   /* Center the container horizontally */
 }
 
 .card {
-  background-color: white;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: 10px;
+  width: 300px;
+  height: 160px;
+  background-color: #f0bbff;
+background-image: linear-gradient(238deg, #f0bbff 0%, #f280e9 23%, #7485ff 100%);
 
+  box-shadow: 10px 10px 5px rgb(208, 207, 207);
+  border: none;
   /* Add hover effect */
   transition: transform 0.3s ease-in-out;
 }
