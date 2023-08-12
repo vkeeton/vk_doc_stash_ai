@@ -22,8 +22,10 @@ class ChatsController < ApplicationController
   def show
     @chat = Chat.find(params[:id])
     @message = Message.new
+    @response = Response.new
     authorize @chat
     authorize @message
+    authorize @response
   end
 
   def update

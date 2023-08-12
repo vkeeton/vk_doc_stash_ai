@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :docs, only: %i[index update create destory]
 
   resources :chats, only: %i[index show new create update] do
-    resources :messages, only: :create
+    resources :messages, only: :create do
+      resources :responses, only: :create
+    end
   end
 end
