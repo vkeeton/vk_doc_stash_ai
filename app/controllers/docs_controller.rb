@@ -2,6 +2,16 @@ class DocsController < ApplicationController
   def index
     @docs = policy_scope(Doc)
     @doc = Doc.new
+    if current_user.chats.where(chat_name: "general").first
+      @chat = current_user.chats.where(chat_name: "general").first
+    else
+      @chat = Chat.new(chat_name: "general")
+      @chat.user = current_user
+      @chat.save
+    end
+    authorize @chat
+    @message = Message.new
+    authorize @message
   end
 
   def show
@@ -48,5 +58,9 @@ class DocsController < ApplicationController
 
   def doc_params
     params.require(:doc).permit(:doc_asset)
+  end
+
+  def chat_params
+    params.require(:chat).permit(:user_id, :chat_name)
   end
 end

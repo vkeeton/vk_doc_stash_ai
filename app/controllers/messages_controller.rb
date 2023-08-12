@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
     @message.chat = @chat
     @message.chat.user = current_user
     if @message.save
-      redirect_to chat_path(@chat)
+      redirect_to docs_path
     else
       render 'chats/show', status: :unprocessable_entity
     end

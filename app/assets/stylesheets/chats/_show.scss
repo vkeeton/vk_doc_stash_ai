@@ -1,0 +1,13 @@
+.container.chatroom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align content to the start (left) of the container */
+}
+
+.messages {
+  width: 100%; /* Ensure messages take up the full width */
+}
+
+.input-section {
+  width: 100%; /* Ensure input section takes up the full width */
+}
