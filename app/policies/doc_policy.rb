@@ -4,6 +4,7 @@ class DocPolicy < ApplicationPolicy
     def resolve
       scope.where(user: user)
     end
+  end
 
     def index?
       true
@@ -24,5 +25,4 @@ class DocPolicy < ApplicationPolicy
     def destroy?
       true
     end
-  end
 end

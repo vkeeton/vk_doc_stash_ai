@@ -37,15 +37,15 @@ class DocsController < ApplicationController
     @doc.character_count = 2000
     @doc.file_type = ".txt"
 
+    authorize @doc
     if @doc.save
       # the following 2 lines are in progress to be able to actually extract the content from the document that is uploaded
-      # file = @doc.doc_asset
+      # file = "app/assets/Test2.rtf"
       # p File.read(file)
       redirect_to docs_path
     else
       render :create
     end
-    authorize @doc
   end
 
   def update
