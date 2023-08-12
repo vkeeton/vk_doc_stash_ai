@@ -12,6 +12,12 @@
         <% end %>
       </div>
     </div>
+    <div class="doc-upload">
+      <%= simple_form_for @doc do |f| %>
+        <%= f.input :doc_asset, as: :file %>
+        <%= f.button :submit, "Submit" %>
+      <% end %>
+    </div>
     </div>
     <div class="rightside">
       <%= render "shared/chats" %>
