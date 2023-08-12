@@ -24,3 +24,37 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  // Using vanilla JS for simplicity, but you can use any library/framework you prefer.
+  const form = document.getElementById('chat-form')
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    let message = e.target.elements['message'].value;
+    console.log(message);
+  // Use AJAX to send the message to the Rails backend
+    fetch('/chats', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        // 'X-CSRF-Token': document.querySelector('[name="csrf-token"]').content
+      },
+      body: new FormData(form)
+      //body: JSON.stringify({ chat: message })
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      // Append the new chat to the chat list
+      // let chatList = document.querySelector('.chat-list');
+      // let newChat = document.createElement('div');
+      // newChat.classList.add('chat-message');
+      // newChat.innerHTML = `<strong>${data.user.name}:</strong> ${data.message}`;
+      // chatList.appendChild(newChat);
+
+      // // Clear the input field
+      // e.target.elements['message'].value = '';
+    });
+  });
+</script>

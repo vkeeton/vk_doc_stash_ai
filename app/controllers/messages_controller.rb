@@ -2,15 +2,24 @@ class MessagesController < ApplicationController
   def create
     @chat = Chat.find(params[:chat_id])
     @message = Message.new(message_params)
+    authorize @message
     @message.chat = @chat
     @message.chat.user = current_user
     if @message.save
-      redirect_to docs_path
+      ChatChannel.broadcast_to(
+        @chat,
+        render_to_string(partial: "message", locals: {message: @message})
+      )
+      @response = OpenaiService.new(@message.contents).call
+      @message.update(response: @response) #save response from open ai in message
+      ChatChannel.broadcast_to(
+        @chat,
+        render_to_string(partial: "response", locals: {message: @response})
+      )
+      head :ok
     else
       render 'chats/show', status: :unprocessable_entity
     end
-    authorize @chat
-    authorize @message
   end
 
   private
@@ -18,4 +27,6 @@ class MessagesController < ApplicationController
   def message_params
     params.require(:message).permit(:contents)
   end
+
+
 end
