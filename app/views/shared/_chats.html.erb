@@ -14,7 +14,13 @@
   </div>
 
   <div class="input-section">
-    <%= simple_form_for [@chat, @message], html: {class: "d-flex flex-column"} do |f| %>
+    <%= simple_form_for [@chat, @message],
+    html: {
+      class: "d-flex flex-column",
+      data: {
+        action: "turbo:submit-end->chat-subscription#resetForm"
+        }
+    } do |f| %>
       <%= f.input :contents,
         label: false,
         placeholder: "Message ##{@chat.chat_name}",

@@ -12,4 +12,14 @@ export default class extends Controller {
     )
     console.log(`Subscribe to the chat with the id ${this.chatIdValue}.`)
   }
+
+  disconnect() {
+    console.log("Unsubscribed from the chat")
+    this.channel.unsubscribe()
+  }
+
+  resetForm(event) {
+    const form = event.target
+    form.reset()
+  }
 }
