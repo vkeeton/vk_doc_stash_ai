@@ -1,5 +1,8 @@
 <h1>Create a new chat</h1>
 <%= simple_form_for [@chat] do |f| %>
   <%= f.input :chat_name, placeholder: 'Enter a name for your chat' %>
+  <% if params[:doc] %>
+    <%= f.input :doc_id, as: :hidden, input_html:{ value: params[:doc]} %>
+  <% end %>
   <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>

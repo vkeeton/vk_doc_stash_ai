@@ -9,11 +9,11 @@
             <%= doc.file_name %>
             <p>Description</p>
             <div class="new-chat-button">
-              <%= link_to new_chat_path, class: "btn btn-warning btn-new-chat" do %>
+              <%= link_to new_chat_path(doc: doc), class: "btn btn-warning btn-new-chat" do %>
                 New Chat
               <% end %>
             </div>
-          </div>
+          </div
         <% end %>
       </div>
     <div class="doc-upload">

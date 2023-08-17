@@ -12,6 +12,11 @@ class ChatsController < ApplicationController
     @chat = Chat.new(chat_params)
     @chat.user = current_user
     if @chat.save
+      if params[:chat][:doc_id]
+        chat_doc = DocChat.new(doc_id: params[:chat][:doc_id].to_i)
+        chat_doc.chat = @chat
+        chat_doc.save
+      end
       redirect_to chat_path(@chat)
     else
       render new
