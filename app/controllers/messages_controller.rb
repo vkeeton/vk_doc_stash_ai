@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   def create
     @chat = Chat.find(params[:chat_id])
+    @doc_contents = @chat.docs.first.content
     @message = Message.new(message_params)
     authorize @message
     @message.chat = @chat
@@ -10,7 +11,7 @@ class MessagesController < ApplicationController
         @chat,
         render_to_string(partial: "message", locals: {message: @message})
       )
-      @response = OpenaiService.new(@message.contents).call
+      @response = OpenaiService.new(@message.contents + @doc_contents).call
       @message.update(response: @response) #save response from open ai in message
       ChatChannel.broadcast_to(
         @chat,
