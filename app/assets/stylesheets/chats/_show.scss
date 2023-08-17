@@ -1,13 +1,44 @@
 .container.chatroom {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align content to the start (left) of the container */
+  align-items: flex-start;
+  scroll-behavior: auto;
+   /* Align content to the start (left) of the container */
 }
 
 .messages {
-  width: 100%; /* Ensure messages take up the full width */
+  width: 100%;
+  overflow-y: scroll;
+  margin-top: 10px;
+  /* Ensure messages take up the full width */
 }
 
 .input-section {
   width: 100%; /* Ensure input section takes up the full width */
+}
+
+.rightside {
+  width: 50%;
+  height: calc(100vh - 200px);
+
+}
+
+.message {
+  background-color: #99A2EF; /* Set the background color to purple */
+  color: #262A41; /* Set the text color to white for better contrast */
+  padding: 8px;
+  margin: 4px;
+  border-radius: 8px;
+  align-self: flex-start;}
+
+  .message i {
+  color:rgb(79, 78, 78) ;
+}
+
+.message strong {
+  color: rgb(43, 42, 42);
+}
+
+.message p {
+  color:#262A41;
 }
