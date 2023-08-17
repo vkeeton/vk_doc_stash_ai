@@ -230,6 +230,7 @@ GEM
     ruby-openai (4.2.0)
       faraday (>= 1)
       faraday-multipart (>= 1)
+    ruby-rtf (0.0.5)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     sassc (2.4.0)
@@ -305,6 +306,7 @@ DEPENDENCIES
   pundit
   rails (~> 7.0.6)
   ruby-openai
+  ruby-rtf
   sassc-rails
   selenium-webdriver
   simple_form!

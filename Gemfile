@@ -28,7 +28,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # manually added gems
-
+gem "ruby-rtf"
 gem "pundit"
 # gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
