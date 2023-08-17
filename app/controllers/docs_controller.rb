@@ -3,18 +3,19 @@ require "ruby-rtf"
 
 class DocsController < ApplicationController
   def index
-    @docs = policy_scope(Doc)
     @doc = Doc.new
-    if current_user.chats.where(chat_name: "general").first
-      @chat = current_user.chats.where(chat_name: "general").first
-    else
-      @chat = Chat.new(chat_name: "general")
-      @chat.user = current_user
-      @chat.save
+    @chat = current_user.chats.where(chat_name: "general").first_or_create do |chat|
+      chat.user = current_user
     end
     authorize @chat
     @message = Message.new
     authorize @message
+
+    if params[:query].present?
+      @docs = policy_scope(Doc).where("file_name ILIKE ?", "%#{params[:query]}%")
+    else
+      @docs = policy_scope(Doc)
+    end
   end
 
   def show
