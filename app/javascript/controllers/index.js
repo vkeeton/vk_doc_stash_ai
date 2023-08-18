@@ -7,5 +7,8 @@ import { application } from "./application"
 import ChatSubscriptionController from "./chat_subscription_controller"
 application.register("chat-subscription", ChatSubscriptionController)
 
+import DropzoneController from "./dropzone_controller"
+application.register("dropzone", DropzoneController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)

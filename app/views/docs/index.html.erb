@@ -8,21 +8,20 @@
           <div class="card">
             <%= doc.file_name %>
             <p>Description</p>
-        <div class="new-chat-button">
-          <%= link_to new_chat_path, class: "btn btn-warning btn-new-chat" do %>
-          New Chat
+            <div class="new-chat-button">
+              <%= link_to "New Chat", new_chat_path, class: "btn btn-warning btn-new-chat" %>
+            </div>
+          </div>
         <% end %>
-        </div>
       </div>
-      <% end %>
     </div>
+
     <div class="doc-upload">
-      <%= simple_form_for @doc do |f| %>
-        <%= f.input :doc_asset, as: :file %>
-        <%= f.button :submit, "Submit" %>
-      <% end %>
+      <h1>Add to Your DocStash</h1>
+        <%= render "shared/doc-upload" %>
     </div>
   </div>
+
   <div class="rightside">
     <%= render "shared/chats" %>
   </div>
