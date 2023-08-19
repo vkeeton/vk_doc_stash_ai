@@ -6,7 +6,8 @@
       <li class="logo"><a href="/chats"><i class="fa-solid fa-comments"></i></a></li>
       <li class="logo"><a href="/settings"><i class="fa-solid fa-gear"></i></a></li>
     </ul>
-</div>
+  </div>
+
   <div class="leftside">
     <div class="cards-container">
       <h1>Your DocStash</h1>
@@ -17,22 +18,18 @@
             <%= doc.file_name %>
             <p>Description</p>
             <div class="new-chat-button">
-              <%= link_to new_chat_path(doc: doc), class: "btn btn-warning btn-new-chat" do %>
-                New Chat
-              <% end %>
+              <%= link_to "New Chat", new_chat_path(doc: doc), class: "btn btn-warning btn-new-chat" %>
             </div>
           </div>
         <% end %>
       </div>
-    <div class="doc-upload">
-      <%= simple_form_for @doc do |f| %>
-        <%= f.input :doc_asset, as: :file %>
-        <%= f.button :submit, "Submit" %>
-      <% end %>
-    </div>
     </div>
 
-  </div>
+    <div class="doc-upload">
+      <h1>Add to Your DocStash</h1>
+      <%= render "shared/doc-upload" %>
+    </div>
+    </div>
 
   <div class="rightside">
     <%= render "shared/chats" %>
