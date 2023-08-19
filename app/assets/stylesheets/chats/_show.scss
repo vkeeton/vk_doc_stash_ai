@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: flex-start;
   scroll-behavior: auto;
-   /* Align content to the start (left) of the container */
 }
 
 .messages {
@@ -11,38 +10,44 @@
   overflow-y: scroll;
   max-height: 60vh;
   margin-top: 10px;
-  // margin-left: 100px;
-  // margin-right: 100px;
   margin-bottom: 15px;
-  /* Ensure messages take up the full width */
 }
 
 .input-section {
-  width: 100%; /* Ensure input section takes up the full width */
+  width: 100%;
 }
 
 .rightside {
   width: 50%;
   height: calc(100vh - 200px);
-
 }
 
-.message {
-  background-color: #99A2EF; /* Set the background color to purple */
-  color: #262A41; /* Set the text color to white for better contrast */
-  padding: 8px;
-  margin: 4px;
-  border-radius: 8px;
-  align-self: flex-start;}
+.container.chatroom {
+  .message {
+      padding: 8px;
+      margin: 4px;
+      border-radius: 8px;
+  }
 
-  .message i {
-  color:rgb(79, 78, 78) ;
+  .user-message {
+      background-color: #D1E3FF;
+      align-self: flex-end;
+  }
+
+  .ai-message {
+      background-color: #FFEDC1;
+      align-self: flex-start;
+  }
+}
+
+.message i, .message strong, .message p {
+  color: #262A41; // Text color
+}
+
+.message i {
+  color: rgb(79, 78, 78);
 }
 
 .message strong {
   color: rgb(43, 42, 42);
-}
-
-.message p {
-  color:#262A41;
 }

@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
     @chat = Chat.find(params[:chat_id])
     @doc_contents = @chat.docs.first&.content
     @message = Message.new(message_params)
+    @message.from_ai = false
     authorize @message
     @message.chat = @chat
     @message.chat.user = current_user
@@ -18,9 +19,15 @@ class MessagesController < ApplicationController
       if combined_text.present?
         @response = OpenaiService.new(combined_text).call
         @message.update(response: @response) # Save response from OpenAI in the message
+
+        # Create a new AI message and save it in the database
+        ai_message = Message.new(contents: @response, chat: @chat) # You can change the user if you have a specific AI user
+        ai_message.from_ai = true
+        ai_message.save
+
         ChatChannel.broadcast_to(
           @chat,
-          render_to_string(partial: "response", locals: {message: @response})
+          render_to_string(partial: "response", locals: {message: ai_message})
         )
       end
 
