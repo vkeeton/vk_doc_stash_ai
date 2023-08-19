@@ -69,7 +69,7 @@ class DocsController < ApplicationController
   private
 
   def doc_params
-    params.require(:doc).permit(:doc_asset)
+    params.require(:doc).permit(:doc_asset, :image)
   end
 
   def chat_params
