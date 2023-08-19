@@ -4,8 +4,12 @@ require "ruby-rtf"
 class DocsController < ApplicationController
   def index
     @doc = Doc.new
-    @chat = current_user.chats.where(chat_name: "general").first_or_create do |chat|
-      chat.user = current_user
+    if params[:chat_id]
+      @chat = Chat.find(params[:chat_id])
+    else
+      @chat = current_user.chats.where(chat_name: "general").first_or_create do |chat|
+        chat.user = current_user
+      end
     end
     authorize @chat
     @message = Message.new
