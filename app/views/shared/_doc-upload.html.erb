@@ -3,7 +3,7 @@
   <p>Drag and Drop here</p>
   <p>or</p>
   <%= simple_form_for @doc do |f| %>
-    <%= f.input :doc_asset, as: :file, label: false %>
-    <%= f.button :submit, "Submit" %>
+    <%= f.input :doc_asset, as: :file, label: false, input_html: { class: "simple-form" }%>
+    <%= f.button :submit, "Submit", input_html: { class: "simple-form" } %>
   <% end %>
 </div>

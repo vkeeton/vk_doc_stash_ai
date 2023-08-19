@@ -1,6 +1,7 @@
 .doc-upload {
   h1 {
     margin-bottom: 40px;
+    margin-top: 26px;
   }
 }
 
@@ -14,10 +15,15 @@
   padding: 20px 100px;
 
   i {
-    color: rgba(38, 42, 65, 0.5);
+    color: #323E41;
   }
 
   p {
     margin-top: 8px;
+    color: #323E41;
   }
+}
+
+.simple-form {
+  color: #323E41;
 }
