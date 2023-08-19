@@ -13,6 +13,7 @@
 
 .cards-container {
   width: 50%;
+  // scroll-behavior: auto;
 }
 
 h1 {
@@ -45,6 +46,8 @@ p {
   font-size: 24px;
   color: white;
   margin-top: 30px;
+  // overflow-x: scroll;
+
    /* Center the container horizontally */
 }
 
@@ -61,6 +64,7 @@ p {
   border: none;
   /* Add hover effect */
   transition: transform 0.3s ease-in-out;
+
 }
 
 .card:hover {

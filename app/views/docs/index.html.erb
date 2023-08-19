@@ -1,17 +1,8 @@
 <div class="container">
-  <div class="sidebar">
-    <ul class="logos">
-      <li class="logo"><a href="/docs"><i class="fa-solid fa-house"></i></a></li>
-      <li class="logo"><a href="/docs#show"><i class="fa-solid fa-file"></i></a></li>
-      <li class="logo"><a href="/chats"><i class="fa-solid fa-comments"></i></a></li>
-      <li class="logo"><a href="/settings"><i class="fa-solid fa-gear"></i></a></li>
-    </ul>
-  </div>
-
+  <%= render 'shared/sidebar' %>
   <div class="leftside">
     <div class="cards-container">
       <h1>Your DocStash</h1>
-      <h5>Filter here</h5>
       <div class="cards">
         <% @docs.each do |doc| %>
           <div class="card">
