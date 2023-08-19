@@ -1,4 +1,12 @@
 <div class="container">
+  <div class="sidebar">
+    <ul class="logos">
+      <li class="logo"><a href="/docs"><i class="fa-solid fa-house"></i></a></li>
+      <li class="logo"><a href="/docs#show"><i class="fa-solid fa-file"></i></a></li>
+      <li class="logo"><a href="/chats"><i class="fa-solid fa-comments"></i></a></li>
+      <li class="logo"><a href="/settings"><i class="fa-solid fa-gear"></i></a></li>
+    </ul>
+</div>
   <div class="leftside">
     <div class="cards-container">
       <h1>Your DocStash</h1>
@@ -9,20 +17,21 @@
             <%= doc.file_name %>
             <p>Description</p>
             <div class="new-chat-button">
-              <%= link_to "New Chat", new_chat_path, class: "btn btn-warning btn-new-chat" %>
+              <%= link_to "New Chat", new_chat_path(doc: doc), class: "btn btn-warning btn-new-chat" %>
             </div>
           </div>
         <% end %>
       </div>
-    </div>
-
     <div class="doc-upload">
       <h1>Add to Your DocStash</h1>
         <%= render "shared/doc-upload" %>
     </div>
+    </div>
+
   </div>
 
   <div class="rightside">
     <%= render "shared/chats" %>
   </div>
+
 </div>
