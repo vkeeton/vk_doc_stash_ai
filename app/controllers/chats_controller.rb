@@ -17,7 +17,7 @@ class ChatsController < ApplicationController
         chat_doc.chat = @chat
         chat_doc.save
       end
-      redirect_to chat_path(@chat)
+      redirect_to docs_path(chat_id: @chat.id)
     else
       render new
     end
