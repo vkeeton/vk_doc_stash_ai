@@ -8,7 +8,15 @@ export default class extends Controller {
   connect() {
     this.channel = createConsumer().subscriptions.create(
       { channel: "ChatChannel", id: this.chatIdValue },
-      { received: data => this.messagesTarget.insertAdjacentHTML("beforeend", data) }
+      { received: data => {
+        this.messagesTarget.insertAdjacentHTML("beforeend", data)
+        setTimeout(() => {
+          this.messagesTarget.scroll(0, this.messagesTarget.scrollHeight)
+        }, 1000);
+        // this.chatTarget.scroll(0, this.chatTarget.scrollHeight);
+        console.log("Code has run")
+      }
+      }
     )
     console.log(`Subscribe to the chat with the id ${this.chatIdValue}.`)
   }
