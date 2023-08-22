@@ -85,6 +85,13 @@
   resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-7.0.7.tgz#03b5faa8642a80211708e8f1754cf424e9228718"
   integrity sha512-NqHf4XDkeVaNk/r+TBo2aAMkjPyRPEfZkSqCTijfWukW1zTZ2XLDfvFzbpRCuWZ6gxItgoa/FkILZm27HRh2yg==
 
+"@rails/activestorage@^7.0.7":
+  version "7.0.7"
+  resolved "https://registry.yarnpkg.com/@rails/activestorage/-/activestorage-7.0.7.tgz#a23e22bccd61756ba52aff3b8cb43b050ae1ecca"
+  integrity sha512-EoiGMWUmRzYQhOQ1ifTFHuYNdOHP3f0YOhrKsFlshrV8vzkRkip1Ks3BMzW98cYOw7v6PUPmEeBxgb4jY2U2+g==
+  dependencies:
+    spark-md5 "^3.0.1"
+
 "@swc/helpers@^0.2.13":
   version "0.2.14"
   resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.2.14.tgz#20288c3627442339dd3d743c944f7043ee3590f0"
@@ -714,6 +721,11 @@ source-map@^0.6.0:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
+
+spark-md5@^3.0.1:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/spark-md5/-/spark-md5-3.0.2.tgz#7952c4a30784347abcee73268e473b9c0167e3fc"
+  integrity sha512-wcFzz9cDfbuqe0FZzfi2or1sgyIrsDwmPwfZC4hiNidPdPINjeUwNfv5kldczoEAcjl9Y1L3SM7Uz2PUEQzxQw==
 
 supports-color@^8.0.0:
   version "8.1.1"

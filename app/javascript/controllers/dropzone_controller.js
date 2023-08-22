@@ -6,7 +6,7 @@ import {
   findElement,
   removeElement,
   insertAfter,
-} from "app/javascript/helpers/dropzone";
+} from "../helpers/dropzone";
 
 // Connects to data-controller="dropzone"
 export default class extends Controller {
@@ -14,6 +14,7 @@ export default class extends Controller {
 
   connect() {
     console.log("Connected to the dropzone controller");
+    console.log(this);
     this.dropZone = createDropZone(this);
     this.hideFileInput();
     this.bindEvents();
@@ -147,7 +148,7 @@ function createDirectUpload(file, url, controller) {
 
 function createDropZone(controller) {
   let dropzone = new Dropzone(controller.element, {
-    url: controller.url,
+    url: "/docs",
     headers: controller.headers,
     maxFiles: controller.maxFiles,
     maxFilesize: controller.maxFileSize,

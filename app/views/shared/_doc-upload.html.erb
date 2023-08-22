@@ -4,7 +4,15 @@
   <%# <p>or</p> %>
 
   <%= simple_form_for @doc do |f| %>
-    <%= render "shared/image_form" %>
+    <%# <%= render "shared/image_form" %>
+        <div class="dropzone dropzone-default dz-clickable" data-controller="dropzone" data-dropzone-max-file-size="5" data-dropzone-accepted-files="image/*" data-dropzone-max-files="2" data-upload-multiple="true">
+      <%# <%= f.input :image,as: :file, direct_upload: true, data: { dropzone_target: 'input' } %>
+      <%= f.input :doc_asset, as: :file, direct_upload: true, label: false, input_html: { class: "simple-form", data: { dropzone_target: 'input' }  }%>
+      <div class="dropzone-msg dz-message needsclick">
+        <h3 class="dropzone-msg-title">Drag here to upload or click here to browse</h3>
+        <span class="dropzone-msg-desc">2 MB file size maximum. Allowed file types png, jpg.</span>
+      </div>
+    </div>
     <%= f.input :doc_asset, as: :file, label: false, input_html: { class: "simple-form" }%>
     <%= f.button :submit, "Submit", input_html: { class: "simple-form" } %>
   <% end %>
