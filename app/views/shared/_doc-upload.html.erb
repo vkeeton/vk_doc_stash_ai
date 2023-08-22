@@ -2,7 +2,9 @@
   <%# <i class="fa-solid fa-cloud-arrow-up fa-xl"></i> %>
   <%# <p>Drag and Drop here</p> %>
   <%# <p>or</p> %>
+
   <%= simple_form_for @doc do |f| %>
+    <%= render "shared/image_form" %>
     <%= f.input :doc_asset, as: :file, label: false, input_html: { class: "simple-form" }%>
     <%= f.button :submit, "Submit", input_html: { class: "simple-form" } %>
   <% end %>
