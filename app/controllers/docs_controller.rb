@@ -53,6 +53,11 @@ class DocsController < ApplicationController
         @doc.content = @file
         @doc.character_count = @file.size
         @doc.save
+      elsif url.ends_with?("pdf")
+        # docsplit text url
+        # docs = Dir['storage/originals/*.doc']
+        Docsplit.extract_text(url, :ocr => false)
+        raise
       end
       redirect_to docs_path
     else
