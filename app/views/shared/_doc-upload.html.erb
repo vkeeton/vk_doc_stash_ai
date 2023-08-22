@@ -1,7 +1,7 @@
 <div class="upload-container upload-form text-center">
-  <i class="fa-solid fa-cloud-arrow-up fa-xl"></i>
-  <p>Drag and Drop here</p>
-  <p>or</p>
+  <%# <i class="fa-solid fa-cloud-arrow-up fa-xl"></i> %>
+  <%# <p>Drag and Drop here</p> %>
+  <%# <p>or</p> %>
   <%= simple_form_for @doc do |f| %>
     <%= f.input :doc_asset, as: :file, label: false, input_html: { class: "simple-form" }%>
     <%= f.button :submit, "Submit", input_html: { class: "simple-form" } %>
