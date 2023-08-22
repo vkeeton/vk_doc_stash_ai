@@ -1,11 +1,15 @@
 <div class="new-chat-container">
   <%= render 'shared/sidebar' %>
-<h1>Create a new chat</h1>
-<%= simple_form_for [@chat] do |f| %>
-  <%= f.input :chat_name, placeholder: 'Enter a name for your chat' %>
-  <% if params[:doc] %>
-    <%= f.input :doc_id, as: :hidden, input_html:{ value: params[:doc]} %>
+  <h1>Create a new chat</h1>
+  <%= simple_form_for @chat do |f| %>
+    <%= f.input :chat_name, placeholder: 'Enter a name for your chat' %>
+    <p>Do you want to add a new document?</p>
+    <!-- Multi-select dropdown for selecting documents -->
+    <% if params[:doc] %>
+     <%= f.input :doc_id, as: :hidden, input_html:{ value: params[:doc]} %>
+    <% end %>
+    <%= f.collection_check_boxes :doc_ids, @docs, :id, :file_name %>
+
+    <%= f.submit "Create Chat", class: "btn btn-primary" %>
   <% end %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
-<% end %>
 </div>
