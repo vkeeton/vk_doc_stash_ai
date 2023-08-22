@@ -12,9 +12,9 @@ class MessagesController < ApplicationController
         @chat,
         render_to_string(partial: "message", locals: {message: @message})
       )
-
-      combined_text = @message.contents.dup # Make a copy of message contents
-      combined_text << @doc_contents if @doc_contents.present?
+      instructions = "Instructions: Respond to the following query in 40 words or less using information in the Contents. Try to make to the response as concise as possible and keep the word count as low as possible."
+      combined_text = instructions + "\n\n" + "Query: " + @message.contents.dup  # Prepend instructions to message contents
+      combined_text << "\n\n" + "Contents: " + @doc_contents if @doc_contents.present?
 
       if combined_text.present?
         @response = OpenaiService.new(combined_text).call
