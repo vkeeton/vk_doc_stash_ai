@@ -61,7 +61,7 @@ class DocsController < ApplicationController
       elsif url.ends_with?("pdf")
         pdf_file = DocRipper::rip(url)
         @doc.file_name = "#{pdf_file[0..15]}..."
-        @doc.file_type = "pd"
+        @doc.file_type = "pdf"
         @doc.content = pdf_file
         @doc.character_count = pdf_file.size
         @doc.save
