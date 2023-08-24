@@ -30,7 +30,7 @@ class DocsController < ApplicationController
 
   def create
     @doc = Doc.new(doc_params)
-    raise
+    # raise
     @doc.user = current_user
     authorize @doc
 

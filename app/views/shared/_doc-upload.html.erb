@@ -5,7 +5,7 @@
 
   <%= simple_form_for @doc do |f| %>
     <%# <%= render "shared/image_form" %>
-        <div class="dropzone dropzone-default dz-clickable" data-controller="dropzone" data-dropzone-max-file-size="5" data-dropzone-accepted-files="image/*" data-dropzone-max-files="2" data-upload-multiple="true">
+        <div class="dropzone dropzone-default dz-clickable" data-controller="dropzone" data-dropzone-max-file-size="5" data-dropzone-accepted-files="image/*,.rtf,.txt" data-dropzone-max-files="2" data-upload-multiple="true">
       <%# <%= f.input :image,as: :file, direct_upload: true, data: { dropzone_target: 'input' } %>
       <%= f.input :doc_asset, as: :file, direct_upload: true, label: false, input_html: { class: "simple-form", data: { dropzone_target: 'input', direct_upload_url: "/rails/active_storage/direct_uploads" }  }%>
       <div class="dropzone-msg dz-message needsclick">

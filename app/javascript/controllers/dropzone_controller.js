@@ -156,4 +156,6 @@ function createDropZone(controller) {
     addRemoveLinks: controller.addRemoveLinks,
     uploadMultiple: controller.uploadMultiple,
     autoQueue: false,
-  })}
+  })
+  return dropzone
+}
