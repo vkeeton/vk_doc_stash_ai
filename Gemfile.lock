@@ -9,6 +9,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    CFPropertyList (2.3.6)
     actioncable (7.0.6)
       actionpack (= 7.0.6)
       activesupport (= 7.0.6)
@@ -96,6 +97,7 @@ GEM
     cloudinary (1.27.0)
       aws_cf_signer
       rest-client (>= 2.0.0)
+    colored (1.2)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
@@ -108,7 +110,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    docsplit (0.7.6)
+    doc_ripper (0.0.9)
+      CFPropertyList (~> 2.3)
+      colored (~> 1.2)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.8.1)
@@ -299,7 +303,7 @@ DEPENDENCIES
   cloudinary
   debug
   devise
-  docsplit
+  doc_ripper
   dotenv-rails
   font-awesome-sass (~> 6.1)
   jbuilder

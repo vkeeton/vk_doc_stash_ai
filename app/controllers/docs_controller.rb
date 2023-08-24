@@ -1,5 +1,6 @@
 require "open-uri"
 require "ruby-rtf"
+require 'doc_ripper'
 
 class DocsController < ApplicationController
   def index
@@ -58,10 +59,12 @@ class DocsController < ApplicationController
         @doc.character_count = @file.size
         @doc.save
       elsif url.ends_with?("pdf")
-        # docsplit text url
-        # docs = Dir['storage/originals/*.doc']
-        Docsplit.extract_text(url, :ocr => false)
-        raise
+        pdf_file = DocRipper::rip(url)
+        @doc.file_name = "#{pdf_file[0..15]}..."
+        @doc.file_type = "pd"
+        @doc.content = pdf_file
+        @doc.character_count = pdf_file.size
+        @doc.save
       end
       redirect_to docs_path
     else

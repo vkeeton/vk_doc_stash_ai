@@ -30,7 +30,7 @@ gem "jbuilder"
 # manually added gems
 gem "ruby-rtf"
 gem "pundit"
-gem "docsplit"
+gem "doc_ripper"
 
 # gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
