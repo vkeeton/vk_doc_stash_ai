@@ -148,7 +148,7 @@ function createDirectUpload(file, url, controller) {
 
 function createDropZone(controller) {
   let dropzone = new Dropzone(controller.element, {
-    url: "/docs",
+    url: controller.url,
     headers: controller.headers,
     maxFiles: controller.maxFiles,
     maxFilesize: controller.maxFileSize,
@@ -156,7 +156,4 @@ function createDropZone(controller) {
     addRemoveLinks: controller.addRemoveLinks,
     uploadMultiple: controller.uploadMultiple,
     autoQueue: false,
-  });
-  console.log(dropzone);
-  return dropzone;
-}
+  })}
