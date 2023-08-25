@@ -24,5 +24,11 @@ class DocPolicy < ApplicationPolicy
 
     def destroy?
       true
+      # record.user == user
+    end
+
+    def show?
+      # Your logic to determine if the user is allowed to view the document
+      true # Or false, depending on your authorization logic
     end
 end
