@@ -1,47 +1,125 @@
+/* Container for chatroom */
 .container.chatroom {
+  /* Add a subtle background color */
+  background-color: #E0E0E0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   scroll-behavior: auto;
+
+  /* Add a soft rounded border */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+
+  /* Nested rules for children of .container.chatroom */
+  .message {
+    padding: 8px;
+    margin: 4px;
+    border-radius: 8px;
+    display: inline-block;
+    max-width: 70%;
+  }
+
+  .user-message {
+    /* Color for User Message */
+    background-color: #97A1F6;
+    align-self: flex-end;
+    text-align: right;
+  }
+
+  .ai-message {
+    /* Color for AI Message */
+    background-color: #D6A9F2;
+    align-self: flex-start;
+    text-align: left;
+  }
+
+  .input-section {
+    width: 100%;
+
+    // If you uncomment these, it will set up the container as a flex container.
+    // You mentioned you commented these out, so decide if you want them or not.
+    display: flex;
+    flex-direction: row;  // to line up child elements horizontally
+    align-items: center;  // vertically align items in the middle
+
+    // This targets the direct children of the .input-section container.
+    // You can be more specific if needed.
+    > * {
+        flex: 1;  // This will make the child grow and take up the remaining space in the container.
+    }
+
+    textarea.form-control {
+      width: 100%;
+    }
+
+    button.btn {
+      flex: 0;
+    }
+
+    textarea {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      border-radius: 8px;
+      padding: 10px 15px;
+      border: 1px solid #b5b5b5;
+      font-size: 16px;
+      resize: none;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: #97A1F6;
+        outline: none;
+        box-shadow: 0 0 8px rgba(151, 161, 246, 0.2);
+      }
+
+      &::placeholder {
+        color: #999;
+      }
+    }
+
+    /* Centering the Send button below the textarea */
+    button {
+      display: block;
+      width: 100px;
+      margin: 10px auto 0;
+    }
+
+    /* If you have a wrapper around the input */
+    .flex-grow-1 {
+      width: 100%;
+    }
+  }
 }
 
+/* Styling for messages section */
 .messages {
   width: 100%;
   overflow-y: scroll;
   max-height: 60vh;
   margin-top: 10px;
   margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Styling for input section */
 .input-section {
   width: 100%;
 }
 
+/* Styling for right side section */
 .rightside {
   width: 50%;
   height: calc(100vh - 200px);
+  padding: 20px;
 }
 
-.container.chatroom {
-  .message {
-      padding: 8px;
-      margin: 4px;
-      border-radius: 8px;
-  }
-
-  .user-message {
-      background-color: #D1E3FF;
-      align-self: flex-end;
-  }
-
-  .ai-message {
-      background-color: #FFEDC1;
-      align-self: flex-start;
-  }
-}
-
+/* Text color */
 .message i, .message strong, .message p {
-  color: #262A41; // Text color
+  color: #262A41;
 }
 
 .message i {
