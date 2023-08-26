@@ -12,26 +12,21 @@
               <div class="new-chat-button">
                 <%= link_to "New Chat", new_chat_path(doc: doc), class: "btn btn-warning btn-new-chat" %>
               </div>
+              <div class="delete-button">
+                <%# <%= link_to "Delete", doc_path(doc), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },  status: :see_other %>
+                <%= link_to "Delete", doc_delete_path(doc), class: "btn btn-warning btn-new-chat" %>
+              </div>
             </div>
           <% end %>
         </div>
-            <div class="delete-button">
-              <%# <%= link_to "Delete", doc_path(doc), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },  status: :see_other %>
-              <%= link_to "Delete", doc_delete_path(doc), class: "btn btn-warning btn-new-chat" %>
-            </div>
-          </div>
-        <% end %>
       </div>
-
-      <div class="doc-upload">
-        <h1>Add to Your DocStash</h1>
-        <%= render "shared/doc-upload" %>
-      </div>
-      </div>
-
-    <div class="rightside col-6">
-      <%= render "shared/active-chat-session" %>
     </div>
-
+    <div class="doc-upload">
+      <h1>Add to Your DocStash</h1>
+      <%= render "shared/doc-upload" %>
+    </div>
+  </div>
+  <div class="rightside col-6">
+    <%= render "shared/active-chat-session" %>
   </div>
 </div>
