@@ -12,4 +12,5 @@ Rails.application.routes.draw do
       resources :responses, only: :create
     end
   end
+  get '/doc_delete/:id', to: 'docs#doc_delete', as: :doc_delete
 end
