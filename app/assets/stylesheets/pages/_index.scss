@@ -22,6 +22,16 @@
   // width: 50%;
   // scroll-behavior: auto;
 }
+.delete-button {
+  position: absolute;
+    top: 2px;
+    right: 8px;
+    color: #262a419e;
+
+    .btn {
+      color: #262a419e;
+    }
+}
 
 @media (min-width: 960px) {
   .cards {
@@ -32,12 +42,7 @@
   //   flex-direction: column; /* Stack content vertically */
   //   align-items: center; /* Center content horizontally */
   // }
-.delete-button {
-  position: absolute;
-    top: 8px;
-    right: 14px;
-    color: #262a419e;
-}
+
 // .delete-button {
 //   background-color: #ffcc00;
 //   color: #ffffff;
@@ -168,7 +173,7 @@ p {
 }
 
 .btn-new-chat {
-  background-color: #7e7cf0;
+  background-color: #8583ec;
   color: #e2dede;
   padding: 4px 10px;
   font-size: 12px;
@@ -176,7 +181,6 @@ p {
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 5px 4px 3px #323f411c;
-
 }
 
 .btn-new-chat:hover {
