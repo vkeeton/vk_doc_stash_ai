@@ -9,8 +9,13 @@
             <div class="card">
               <h2 class="file_name"> <%= doc.file_name %> </h2>
               <p>Description</p>
-              <div class="new-chat-button">
-                <%= link_to "New Chat", new_chat_path(doc: doc), class: "btn btn-warning btn-new-chat" %>
+              <div class="flex-buttons">
+                <div class="open-doc-button">
+                    <%= link_to "Open Doc", doc_path(doc), class: "btn btn-warning btn-open-doc"%>
+                </div>
+                <div class="new-chat-button">
+                  <%= link_to "New Chat", new_chat_path(doc: doc), class: "btn btn-warning btn-new-chat" %>
+                </div>
               </div>
               <div class="delete-button">
                 <%# <%= link_to "Delete", doc_path(doc), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },  status: :see_other %>
