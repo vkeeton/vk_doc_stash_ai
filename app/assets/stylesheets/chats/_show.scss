@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: flex-start;
   scroll-behavior: auto;
+  height: 100%;
 
   /* Add a soft rounded border */
   border: 1px solid #e0e0e0;
@@ -113,8 +114,8 @@
 /* Styling for right side section */
 .rightside {
   width: 50%;
-  height: calc(100vh - 200px);
-  padding: 20px;
+  // height: calc(100vh - 200px);
+  // padding: 20px;
 }
 
 /* Text color */
