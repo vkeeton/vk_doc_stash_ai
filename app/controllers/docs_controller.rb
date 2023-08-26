@@ -75,7 +75,7 @@ class DocsController < ApplicationController
   def update
   end
 
-  def destroy
+  def doc_delete
     @doc = Doc.find(params[:id])
     authorize @doc
     @doc.destroy

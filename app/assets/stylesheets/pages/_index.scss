@@ -18,13 +18,16 @@
 }
 
 .delete-button {
-  background-color: #c834e6;
-  color: #ffffff;
-  padding: 4px 10px;
+  background-color: #eae7eb;
+  color: #393636;
   font-size: 12px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+
 }
 
 @media (max-width: 960px) {

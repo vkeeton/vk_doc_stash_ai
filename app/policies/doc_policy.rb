@@ -22,7 +22,7 @@ class DocPolicy < ApplicationPolicy
       true
     end
 
-    def destroy?
+    def doc_delete?
       true
       # record.user == user
     end
