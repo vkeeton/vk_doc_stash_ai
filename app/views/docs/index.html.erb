@@ -7,14 +7,16 @@
         <div class="cards">
           <% @docs.each do |doc| %>
             <div class="card">
-              <%= doc.file_name %>
+              <h2 class="file_name"> <%= doc.file_name %> </h2>
               <p>Description</p>
               <div class="new-chat-button">
                 <%= link_to "New Chat", new_chat_path(doc: doc), class: "btn btn-warning btn-new-chat" %>
               </div>
               <div class="delete-button">
                 <%# <%= link_to "Delete", doc_path(doc), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },  status: :see_other %>
-                <%= link_to "Delete", doc_delete_path(doc), class: "btn btn-warning btn-new-chat" %>
+                <%= link_to doc_delete_path(doc), class: "delete-button" do %>
+                  <i class="fa-regular fa-trash-can fa-xs"></i>
+                <% end %>
               </div>
             </div>
           <% end %>

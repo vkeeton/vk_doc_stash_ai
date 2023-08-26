@@ -22,6 +22,16 @@
   // width: 50%;
   // scroll-behavior: auto;
 }
+.delete-button {
+  position: absolute;
+    top: 2px;
+    right: 8px;
+    color: #262a419e;
+
+    .btn {
+      color: #262a419e;
+    }
+}
 
 @media (min-width: 960px) {
   .cards {
@@ -32,11 +42,7 @@
   //   flex-direction: column; /* Stack content vertically */
   //   align-items: center; /* Center content horizontally */
   // }
-.delete-button {
-  position:absolute;
-  top: 5px;
-  right: 20px;
-}
+
 // .delete-button {
 //   background-color: #ffcc00;
 //   color: #ffffff;
@@ -138,11 +144,22 @@ p {
   height: 160px;
   background-color: #f0bbff;
   background-image: linear-gradient(238deg, #f0bbff 0%, #f280e9 23%, #7485ff 100%);
-  box-shadow: 10px 10px 5px rgb(208, 207, 207);
+  box-shadow: 10px 10px 5px #d0cfcfa1;
   border: none;
   /* Add hover effect */
   transition: transform 0.3s ease-in-out;
 
+  .file_name {
+    color: #262A41;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.doc-upload {
+  h1 {
+    font-size: 32px;
+  }
 }
 
 .card:hover {
@@ -156,19 +173,19 @@ p {
 }
 
 .btn-new-chat {
-  background-color: #8683fb;
-  color: #f5f0f0;
+  background-color: #8583ec;
+  color: #e2dede;
   padding: 4px 10px;
   font-size: 12px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 5px 4px 3px #323f411c;
-
 }
 
 .btn-new-chat:hover {
-  background-color: #0056b3;
+  background-color: #444380;
+  color: #e2dede;
 }
 
 // .new-chat-container {
