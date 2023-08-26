@@ -1,22 +1,22 @@
 .sidebar {
-  width: 80px;
+  width: 74px;
   height: 100vh;
-  position: fixed;
-  background-color: #e4e4e4;
+  position: sticky;
+  background-color: #efefef;
   top: 0;
   left: 0;
-  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 0 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  margin-top: 85px;
-  overflow-y: hidden; /* Hide vertical scrollbar */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
+  // overflow-y: hidden; /* Hide vertical scrollbar */
+  // overflow-x: hidden; /* Hide horizontal scrollbar */
+  clip-path: inset(0px -10px -10px -10px);
 }
 
 .logos {
   list-style: none;
   padding: 0;
   margin: 0;
-  overflow: auto;
+  // overflow: auto;
 }
 
 .logo {
@@ -29,11 +29,14 @@
 }
 
 .logo i {
-  font-size: 32px;
-  color: #262A41;
-
+  font-size: 28px;
+  color: #bbbaba;
 }
 
 .logo:hover {
   transform: translateY(-5px);
+}
+
+.logo:active {
+  color: #262A41;
 }

@@ -1,22 +1,31 @@
 // app/assets/stylesheets/docs.scss
 
 /* Styles for the DocsStash page */
-.container {
+.content-container {
   display: flex;
   height: 100vh;
   font-family: 'Poppins', sans-serif;
   margin-top: 10px;
+  margin-right: 16px;
+  margin-left: 18px;
 }
 
 .leftside {
-  width: 50%;
+  // width: 50%;
+  padding-right: 28px;
 }
 
 .cards-container {
-  width: 50%;
+  flex-wrap: wrap;
+  // width: 50%;
   // scroll-behavior: auto;
 }
 
+@media (min-width: 960px) {
+  // .container {
+  //   flex-direction: column; /* Stack content vertically */
+  //   align-items: center; /* Center content horizontally */
+  // }
 .delete-button {
   position:absolute;
   top: 5px;
@@ -43,7 +52,7 @@
 //   background-color: #95a6b8;
 //   color: #080303;
 //   text-decoration: none;
-// }
+}
 
 @media (max-width: 960px) {
   .container {
@@ -51,22 +60,35 @@
     align-items: center; /* Center content horizontally */
   }
 
-  .leftside,
-  .cards-container {
-    width: 100%; /* Occupy full width on smaller screens */
+  // .leftside,
+  // .cards-container {
+  //   width: 100%; /* Occupy full width on smaller screens */
+  //   grid-template-columns: 1fr;
+  // }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 720px) {
-  .container {
+  .content-container {
     width: 500px; /* Remove margin on smaller screens */
   }
 }
 
 @media (max-width: 540px) {
   /* For a screen < 540px, this CSS will be read */
-  .container {
+  .content-container {
     width: 300px;
+  }
+}
+
+@media (max-width: 960px) {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -94,8 +116,9 @@ p {
 
 /* Reduce the width of the cards container */
 .cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  // display: flex;
+  // flex-wrap: wrap;
+  // grid-template-columns: 1fr 1fr;
   gap: 20px;
   font-size: 24px;
   color: white;
@@ -110,7 +133,7 @@ p {
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  width: 300px;
+  width: 100%;
   height: 160px;
   background-color: #f0bbff;
   background-image: linear-gradient(238deg, #f0bbff 0%, #f280e9 23%, #7485ff 100%);
@@ -149,4 +172,12 @@ p {
   margin-right: 100px;
   margin-left: 100px;
   margin: 16px;
+}
+
+.container {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  max-width: 100%;
 }
