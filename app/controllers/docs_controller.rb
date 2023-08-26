@@ -1,11 +1,16 @@
 require "open-uri"
 require "ruby-rtf"
+require 'doc_ripper'
 
 class DocsController < ApplicationController
   def index
     @doc = Doc.new
-    @chat = current_user.chats.where(chat_name: "general").first_or_create do |chat|
-      chat.user = current_user
+    if params[:chat_id]
+      @chat = Chat.find(params[:chat_id])
+    else
+      @chat = current_user.chats.where(chat_name: "general").first_or_create do |chat|
+        chat.user = current_user
+      end
     end
     authorize @chat
     @message = Message.new
@@ -54,6 +59,13 @@ class DocsController < ApplicationController
         @doc.content = @file
         @doc.character_count = @file.size
         @doc.save
+      elsif url.ends_with?("pdf")
+        pdf_file = DocRipper::rip(url)
+        @doc.file_name = "#{pdf_file[0..15]}..."
+        @doc.file_type = "pdf"
+        @doc.content = pdf_file
+        @doc.character_count = pdf_file.size
+        @doc.save
       end
       redirect_to docs_path
     else
@@ -64,7 +76,12 @@ class DocsController < ApplicationController
   def update
   end
 
-  def destroy
+  def doc_delete
+    @doc = Doc.find(params[:id])
+    authorize @doc
+    @doc.destroy
+
+    redirect_to docs_path, status: :see_other
   end
 
   private

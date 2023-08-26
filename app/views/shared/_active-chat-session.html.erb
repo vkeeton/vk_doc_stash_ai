@@ -3,9 +3,14 @@
 
   <div class="messages" data-chat-subscription-target="messages">
     <% @chat.messages.each do |message| %>
-      <div id="message-<%= message.id %>" class="message">
+      <div id="message-<%= message.id %>" class="message <%= message.from_ai? ? 'ai-message' : 'user-message' %>">
         <small>
-          <strong><%= message.chat.user.user_name %></strong>
+          <strong>
+          <% if message.from_ai? %>
+            <%= 'DocStashAI' %>
+          <% else %>
+            <%= message.chat.user.user_name %></strong>
+          <% end %>
           <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
         </small>
         <p><%= message.contents %></p>
