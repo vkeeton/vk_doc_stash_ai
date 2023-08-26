@@ -17,6 +17,16 @@
   // scroll-behavior: auto;
 }
 
+.delete-button {
+  background-color: #c834e6;
+  color: #ffffff;
+  padding: 4px 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 @media (max-width: 960px) {
   .container {
     flex-direction: column; /* Stack content vertically */
