@@ -11,7 +11,7 @@
               <p>Description</p>
               <div class="flex-buttons">
                 <div class="open-doc-button">
-                    <%= link_to "Open Doc", doc_path(doc), class: "btn btn-warning btn-open-doc"%>
+                    <%= link_to "Open Doc", doc_path(doc), data:{ turbo_frame: "modal"}, class: "btn btn-warning btn-open-doc"%>
                 </div>
                 <div class="new-chat-button">
                   <%= link_to "New Chat", new_chat_path(doc: doc), class: "btn btn-warning btn-new-chat" %>
