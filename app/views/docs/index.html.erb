@@ -15,6 +15,12 @@
             </div>
           <% end %>
         </div>
+            <div class="delete-button">
+              <%# <%= link_to "Delete", doc_path(doc), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },  status: :see_other %>
+              <%= link_to "Delete", doc_delete_path(doc), class: "btn btn-warning btn-new-chat" %>
+            </div>
+          </div>
+        <% end %>
       </div>
 
       <div class="doc-upload">

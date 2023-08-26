@@ -75,7 +75,12 @@ class DocsController < ApplicationController
   def update
   end
 
-  def destroy
+  def doc_delete
+    @doc = Doc.find(params[:id])
+    authorize @doc
+    @doc.destroy
+
+    redirect_to docs_path, status: :see_other
   end
 
   private

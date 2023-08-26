@@ -26,6 +26,39 @@
   //   flex-direction: column; /* Stack content vertically */
   //   align-items: center; /* Center content horizontally */
   // }
+.delete-button {
+  position:absolute;
+  top: 5px;
+  right: 20px;
+}
+// .delete-button {
+//   background-color: #ffcc00;
+//   color: #ffffff;
+//   font-size: 12px;
+//   border: none;
+//   border-radius: 5px;
+//   padding: 4px 10px;
+//   // bottom: 20px;
+//   // right: 20px;
+//   // width: 50px;
+//   // margin: 5px;
+//   // padding: 4px 1px;
+//   // align-items: center;
+//   // justify-content: center;
+//   text-decoration: none;
+// }
+
+// .delete-button:hover {
+//   background-color: #95a6b8;
+//   color: #080303;
+//   text-decoration: none;
+// }
+
+@media (max-width: 960px) {
+  .container {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally */
+  }
 
   // .leftside,
   // .cards-container {
@@ -138,6 +171,7 @@ p {
 .new-chat-container {
   margin-right: 100px;
   margin-left: 100px;
+  margin: 16px;
 }
 
 .container {
