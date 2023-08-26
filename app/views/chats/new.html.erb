@@ -1,5 +1,6 @@
-<div class="new-chat-container">
+<div class="new-chat-container d-flex gap-3" >
   <%= render 'shared/sidebar' %>
+  <div>
   <h1>Create a new chat</h1>
   <%= simple_form_for @chat do |f| %>
     <%= f.input :chat_name, placeholder: 'Enter a name for your chat' %>
@@ -11,4 +12,5 @@
     <%= f.collection_check_boxes :doc_ids, @docs, :id, :file_name %>
     <%= f.submit "Create Chat", class: "btn btn-primary" %>
   <% end %>
+  </div>
 </div>
