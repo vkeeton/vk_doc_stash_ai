@@ -2,22 +2,14 @@
 <div class="navbar navbar-expand-sm navbar-light">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <h1>DocStash <span>AI</span></h1>
-      <%# <%= image_tag "/app/assets/images/IMG_0315.png" %>
+      <%= image_tag("IMG_0315.png", class: "logo") %>
     <% end %>
 
     <!-- New Row for Search Bar and Avatar -->
     <div class="row align-items-center"> <!-- Added this div -->
       <div class="col-sm-8 my-3">
         <!-- Moved the search form here -->
-        <%= form_with url: docs_path, method: :get, class: "d-flex" do %>
-          <%= text_field_tag :query,
-                params[:query],
-                class: "form-control",
-                placeholder: "Type a keyword"
-            %>
-          <%= submit_tag "Search", name: "", class: "btn btn-primary ms-2" %>
-        <% end %>
+
       </div>
 
       <!-- Moved the avatar-related elements here -->
@@ -29,15 +21,9 @@
             <% if current_user.photo.attached? %>
               <%= cl_image_tag(current_user.photo.key, class: "avatar", alt: "dropdown menu") %>
             <% else %>
-              <img src="https://res.cloudinary.com/dpvwejoeb/image/upload/v1691671929/photo-1511367461989-f85a21fda167_r8otbi.avif" width="90" height="35" class="avatar" alt="avatar" />
+              <img src="https://res.cloudinary.com/dpvwejoeb/image/upload/v1691671929/photo-1511367461989-f85a21fda167_r8otbi.avif" class="avatar" alt="avatar" />
             <% end %>
           </a>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <!-- Dropdown Menu Items -->
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "dropdown-item" %>
-          </div>
         <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
