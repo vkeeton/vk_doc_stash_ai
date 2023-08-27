@@ -1,2 +1,11 @@
-<h1>Docs Show Page</h1>
-<%= @doc.file_name %>
+<%= turbo_frame_tag "modal" do %>
+  <div class="modal-container" data-controller="modal" data-modal-target="container">
+    <div class="modal-header">
+      <h1><%= @doc.file_name %></h1>
+      <button class="close-button" data-action="click->modal#closeModal">&times;</button>
+    </div>
+    <div class="modal-content">
+      <p><%= @doc.content %></p>
+    </div>
+  </div>
+<% end %>

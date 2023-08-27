@@ -171,9 +171,11 @@ p {
 }
 
 .new-chat-button {
-  position:absolute;
-  bottom: 20px;
-  right: 20px;
+  // position:absolute;
+  // bottom: 20px;
+  // right: 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 .btn-new-chat {
@@ -190,6 +192,36 @@ p {
 .btn-new-chat:hover {
   background-color: #444380;
   color: #e2dede;
+}
+
+.open-doc-button {
+  // position:absolute;
+  // bottom: 20px;
+  // right: 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.btn-open-doc {
+  background-color: #DD80EC;
+  color: #e2dede;
+  padding: 4px 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 5px 4px 3px #323f411c;
+}
+
+.btn-open-doc:hover {
+  background-color: #444380;
+  color: #e2dede;
+}
+
+.flex-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 // .new-chat-container {
