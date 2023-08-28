@@ -94,8 +94,23 @@
     }
   }
 
-  .chat_name {
-    font-size: 32px;
+  // Styling for the chat info icon
+  .chat-info {
+    align-items: baseline;
+
+    i {
+      color: #9E9B9A;
+      padding-right: 10px;
+    }
+
+    p {
+      font-size: 13px;
+      color: #9E9B9A;
+    }
+
+    .highlighted-text {
+      color: #262a41b0;
+    }
   }
 }
 
