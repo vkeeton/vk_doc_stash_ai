@@ -35,8 +35,16 @@
 
 .logo:hover {
   transform: translateY(-5px);
+
+  i {
+    color: #262A41;
+  }
 }
 
 .logo:active {
   color: #262A41;
+}
+
+#logout {
+  // padding-top: 182px;
 }
