@@ -1,8 +1,10 @@
 
 <div class="sidebar " style="position: sticky;">
     <ul class="logos">
-      <li class="logo"><a href="/docs"><i class="fa-solid fa-house"></i></a></li>
-      <%# <li class="logo"><a href="/docs#show"><i class="fa-solid fa-file"></i></a></li> %>
+      <%= link_to docs_path do %>
+        <% current_page?(controller: "/docs", action: "index") ? icon_class = "active" : icon_class = "" %>
+        <li class="logo <%= icon_class %> "><i class="fa-solid fa-house"></i></li>
+      <% end %>
       <li class="logo"><a href="/chats"><i class="fa-solid fa-comments"></i></a></li>
       <li class="logo"><a href="/settings"><i class="fa-solid fa-gear"></i></a></li>
     </ul>
