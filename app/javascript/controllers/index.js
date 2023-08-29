@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import ChatIconController from "./chat_icon_controller"
+application.register("chat-icon", ChatIconController)
+
 import ChatSubscriptionController from "./chat_subscription_controller"
 application.register("chat-subscription", ChatSubscriptionController)
 
