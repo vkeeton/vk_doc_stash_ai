@@ -17,8 +17,14 @@ class ChatsController < ApplicationController
     if @chat.save
       DocChat.create(doc_id: params[:chat][:doc_id], chat_id: @chat.id)
       selected_doc_ids = params[:chat][:doc_ids] || []
+      p selected_doc_ids
       selected_doc_ids.each do |doc_id|
-        DocChat.find_or_create_by(doc_id: doc_id, chat_id: @chat.id)
+        if doc_id.nil?
+          next
+        else
+          a = DocChat.find_or_create_by(doc_id: doc_id, chat_id: @chat.id)
+          p a
+        end
       end
       redirect_to docs_path(chat_id: @chat.id)
     else
@@ -41,6 +47,6 @@ class ChatsController < ApplicationController
   private
 
   def chat_params
-    params.require(:chat).permit(:user_id, :chat_name, :doc_id, doc_ids: [])
+    params.require(:chat).permit(:user_id, :chat_name, doc_ids: [])
   end
 end
