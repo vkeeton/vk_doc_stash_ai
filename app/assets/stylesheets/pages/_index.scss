@@ -1,20 +1,74 @@
 // app/assets/stylesheets/docs.scss
 
 /* Styles for the DocsStash page */
-.container {
+.content-container {
   display: flex;
+  flex-wrap: wrap;
   height: 100vh;
   font-family: 'Poppins', sans-serif;
-  margin-top: 10px;
+  // margin-right: 16px;
+  margin-left: 18px;
+  width: 100%;
+  background-color: #FBF9F9;
+}
+
+.doc-upload {
+  margin-top: 58px;
 }
 
 .leftside {
-  width: 50%;
+  // width: 50%;
+  padding-right: 28px;
+  margin-top: 30px;
+  padding-left: 12px;
 }
 
 .cards-container {
-  width: 50%;
+  // width: 50%;
   // scroll-behavior: auto;
+}
+.delete-button {
+  position: absolute;
+    top: 2px;
+    right: 8px;
+    color: #262a411f;
+
+    :hover {
+      color: #262a41b4;
+    }
+}
+
+@media (min-width: 960px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  // .container {
+  //   flex-direction: column; /* Stack content vertically */
+  //   align-items: center; /* Center content horizontally */
+  // }
+
+// .delete-button {
+//   background-color: #ffcc00;
+//   color: #ffffff;
+//   font-size: 12px;
+//   border: none;
+//   border-radius: 5px;
+//   padding: 4px 10px;
+//   // bottom: 20px;
+//   // right: 20px;
+//   // width: 50px;
+//   // margin: 5px;
+//   // padding: 4px 1px;
+//   // align-items: center;
+//   // justify-content: center;
+//   text-decoration: none;
+// }
+
+// .delete-button:hover {
+//   background-color: #95a6b8;
+//   color: #080303;
+//   text-decoration: none;
 }
 
 .delete-button {
@@ -31,33 +85,41 @@
 }
 
 @media (max-width: 960px) {
-  .container {
+  .content-container {
     flex-direction: column; /* Stack content vertically */
     align-items: center; /* Center content horizontally */
   }
 
-  .leftside,
-  .cards-container {
-    width: 100%; /* Occupy full width on smaller screens */
-  }
+  // .leftside,
+  // .cards-container {
+  //   width: 100%; /* Occupy full width on smaller screens */
+  //   grid-template-columns: 1fr;
+  // }
 }
 
 @media (max-width: 720px) {
-  .container {
+  .content-container {
     width: 500px; /* Remove margin on smaller screens */
   }
 }
 
 @media (max-width: 540px) {
   /* For a screen < 540px, this CSS will be read */
-  .container {
+  .content-container {
     width: 300px;
+  }
+}
+
+@media (max-width: 960px) {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
 h1 {
   font-size: 36px;
-  color: #323E41;
+  color: #323e41c2;
   margin-bottom: 10px;
   font-family: 'Poppins', sans-serif;
 }
@@ -79,8 +141,9 @@ p {
 
 /* Reduce the width of the cards container */
 .cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  // display: flex;
+  // flex-wrap: wrap;
+  // grid-template-columns: 1fr 1fr;
   gap: 20px;
   font-size: 24px;
   color: white;
@@ -95,15 +158,26 @@ p {
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  width: 300px;
+  width: 100%;
   height: 160px;
   background-color: #f0bbff;
   background-image: linear-gradient(238deg, #f0bbff 0%, #f280e9 23%, #7485ff 100%);
-  box-shadow: 10px 10px 5px rgb(208, 207, 207);
+  box-shadow: 10px 10px 5px #d0cfcfa1;
   border: none;
   /* Add hover effect */
   transition: transform 0.3s ease-in-out;
 
+  .file_name {
+    color: #262A41;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.doc-upload {
+  h1 {
+    font-size: 32px;
+  }
 }
 
 .card:hover {
@@ -111,26 +185,70 @@ p {
 }
 
 .new-chat-button {
-  position:absolute;
-  bottom: 20px;
-  right: 20px;
+  // position:absolute;
+  // bottom: 20px;
+  // right: 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 .btn-new-chat {
-  background-color: #ffcc00;
-  color: #ffffff;
+  background-color: #8583ec;
+  color: #e2dede;
   padding: 4px 10px;
   font-size: 12px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  box-shadow: 5px 4px 3px #323f411c;
 }
 
 .btn-new-chat:hover {
-  background-color: #0056b3;
+  background-color: #444380;
+  color: #e2dede;
 }
 
-.new-chat-container {
-  margin-right: 100px;
-  margin-left: 100px;
+.open-doc-button {
+  // position:absolute;
+  // bottom: 20px;
+  // right: 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.btn-open-doc {
+  background-color: #DD80EC;
+  color: #e2dede;
+  padding: 4px 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 5px 4px 3px #323f411c;
+}
+
+.btn-open-doc:hover {
+  background-color: #444380;
+  color: #e2dede;
+}
+
+.flex-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+// .new-chat-container {
+//   margin-right: 100px;
+//   margin-left: 100px;
+//   margin: 16px;
+// }
+
+.container {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  max-width: 100%;
+  background-color: #FBF9F9;
 }

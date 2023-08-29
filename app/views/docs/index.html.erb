@@ -1,33 +1,38 @@
 <div class="container">
   <%= render 'shared/sidebar' %>
-  <div class="leftside">
-    <div class="cards-container">
-      <h1>Your DocStash</h1>
-      <div class="cards">
-        <% @docs.each do |doc| %>
-          <div class="card">
-            <%= doc.file_name %>
-            <p>Description</p>
-            <div class="new-chat-button">
-              <%= link_to "New Chat", new_chat_path(doc: doc), class: "btn btn-warning btn-new-chat" %>
+  <div class="content-container">
+    <div class="leftside col-6">
+      <div class="cards-container">
+        <h1>Your DocStash</h1>
+        <div class="cards">
+          <% @docs.each do |doc| %>
+            <div class="card">
+              <h2 class="file_name"> <%= doc.file_name %> </h2>
+              <p>Description</p>
+              <div class="flex-buttons">
+                <div class="open-doc-button">
+                    <%= link_to "Open Doc", doc_path(doc), data:{ turbo_frame: "modal"}, class: "btn btn-warning btn-open-doc"%>
+                </div>
+                <div class="new-chat-button">
+                  <%= link_to "New Chat", new_chat_path(doc: doc), class: "btn btn-warning btn-new-chat" %>
+                </div>
+              </div>
+              <div class="delete-button">
+                <%# <%= link_to "Delete", doc_path(doc), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },  status: :see_other %>
+                <%= link_to doc_delete_path(doc), class: "delete-button" do %>
+                  <i class="fa-solid fa-xmark fa-xs"></i>
+                <% end %>
+              </div>
             </div>
-            <div class="delete-button">
-              <%# <%= link_to "Delete", doc_path(doc), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },  status: :see_other %>
-              <%= link_to "delete", doc_delete_path(doc) %>
-            </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="doc-upload">
+        <%= render "shared/doc-upload" %>
       </div>
     </div>
-
-    <div class="doc-upload">
-      <h1>Add to Your DocStash</h1>
-      <%= render "shared/doc-upload" %>
-    </div>
-    </div>
-
-  <div class="rightside">
+  <div class="rightside col-6">
     <%= render "shared/active-chat-session" %>
   </div>
-
+  </div>
 </div>

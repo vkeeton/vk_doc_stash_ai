@@ -48,20 +48,20 @@ class DocsController < ApplicationController
         parsed_text = parser.parse(@file).sections.map do |val|
           val[:text]
         end.join(' ')
-        @doc.file_name = "#{parsed_text[0..15]}..."
+        @doc.file_name = parsed_text.split("\n").first
         @doc.file_type = "rtf"
         @doc.content = parsed_text
         @doc.character_count = parsed_text.size
         @doc.save
       elsif url.ends_with?("txt")
-        @doc.file_name = "#{@file[0..15]}..."
+        @doc.file_name = @file.split(" ").first(3).join(" ")
         @doc.file_type = "txt"
         @doc.content = @file
         @doc.character_count = @file.size
         @doc.save
       elsif url.ends_with?("pdf")
         pdf_file = DocRipper::rip(url)
-        @doc.file_name = "#{pdf_file[0..15]}..."
+        @doc.file_name = pdf_file.split(" ").first(3).join(" ")
         @doc.file_type = "pdf"
         @doc.content = pdf_file
         @doc.character_count = pdf_file.size

@@ -1,0 +1,55 @@
+.text-center {
+  text-align: center;
+}
+
+.my-5 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.chat-card {
+  background: linear-gradient(238deg, #f0bbff 0%, #f280e9 23%, #7485ff 100%);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.btn-details {
+  display: inline-block;
+  background-color: #6c63ff;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-details:hover {
+  background-color: #5a50e9;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-5 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.cards-section{
+  margin-left: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

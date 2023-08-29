@@ -1,5 +1,16 @@
 <div class="container chatroom" data-controller="chat-subscription" data-chat-subscription-chat-id-value="<%= @chat.id %>">
-  <h1>#<%= @chat.chat_name %></h1>
+<div class="chat-info d-flex">
+  <i class="fa-regular fa-circle-question"></i>
+  <% if @chat.docs.count == 1 %>
+    <p> You're chatting with doc <% @chat.docs.each do |doc| %> '<%= doc.file_name %>' <% end %>
+    in your '<%= @chat.chat_name.capitalize %>' session</p>
+  <% elsif @chat.docs.count > 1 %>
+    <p> You're chatting with docs <% @chat.docs.each do |doc| %> <span class="highlighted-text">'<%= doc.file_name %>'</span> <% end %>
+    in your '<%= @chat.chat_name.capitalize %>' session</p>
+  <% else %>
+  <p> You're chatting in your '<%= @chat.chat_name.capitalize %>' session</p>
+  <% end %>
+</div>
 
   <div class="messages" data-chat-subscription-target="messages">
     <% @chat.messages.each do |message| %>
@@ -21,17 +32,17 @@
   <div class="input-section">
     <%= simple_form_for [@chat, @message],
     html: {
-      class: "d-flex flex-column",
+      class: "d-flex flex-row",
       data: {
-        action: "turbo:submit-end->chat-subscription#resetForm"
-        }
+        action: "turbo:submit-end->chat-subscription#resetForm" }
     } do |f| %>
+
       <%= f.input :contents,
         label: false,
         placeholder: "Message ##{@chat.chat_name}",
-        wrapper_html: {class: "flex-grow-1"}
+        wrapper_html: {class: "flex-grow-1"},
+        input_html: {class: "form control" }
       %>
-      <%= f.submit "Send", class: "btn btn-primary mt-3 align-self-end" %>
+      <%= f.submit "Send", class: "btn btn-primary ml-2 " %><!-- Added margin-left for spacing -->
     <% end %>
-  </div>
 </div>

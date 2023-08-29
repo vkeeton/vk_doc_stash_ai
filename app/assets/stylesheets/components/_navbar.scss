@@ -11,8 +11,14 @@
 .navbar {
   height: 60px;
   justify-content: space-between;
-  background: white;
+  background: #FBF9F9;
+  box-shadow: 1px 0 4px rgba(0, 0, 0, 0.1);
+  // position: fixed;
   // border-bottom: solid 0px lightgray;
+
+  .row {
+    padding-right: 42px;
+  }
 
   h1 {
     color: #262A41;
@@ -20,5 +26,20 @@
 
   span {
     color: #2FCBED;
+  }
+
+  .logo {
+    width: 202px;
+    height: 43px;
+    mix-blend-mode: multiply;
+    margin-bottom: 4px;
+  }
+
+  .avatar {
+    width: 46px;
+    border-radius: 8px;
+    height: 46px;
+    box-shadow: 4px 2px 4px #d0cfcfa1;
+    object-fit: cover;
   }
 }
