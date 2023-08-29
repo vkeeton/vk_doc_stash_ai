@@ -16,11 +16,10 @@
     <% @chat.messages.each do |message| %>
       <div id="message-<%= message.id %>" class="message <%= message.from_ai? ? 'ai-message' : 'user-message' %>">
         <small>
-          <strong>
           <% if message.from_ai? %>
             <%= 'DocStashAI' %>
           <% else %>
-            <%= message.chat.user.user_name %></strong>
+            <%= message.chat.user.user_name %>
           <% end %>
           <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
         </small>
