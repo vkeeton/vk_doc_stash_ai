@@ -14,7 +14,7 @@
                     <%= link_to "Open Doc", doc_path(doc), data:{ turbo_frame: "modal"}, class: "btn btn-warning btn-open-doc"%>
                 </div>
                 <div class="new-chat-button">
-                  <%= link_to "New Chat", new_chat_path(doc: doc), class: "btn btn-warning btn-new-chat" %>
+                  <%= link_to "New Chat", new_chat_path(doc: doc), data:{ turbo_frame: "new_chat_modal"}, class: "btn btn-warning btn-new-chat" %>
                 </div>
               </div>
               <div class="delete-button">
