@@ -1,11 +1,11 @@
 <%= turbo_frame_tag "new_chat_modal" do %>
   <div class="modal-container" data-controller="modal" data-modal-target="newChatContainer">
     <div class="new-chat-container d-flex gap-3" >
-    <%= simple_form_for @chat do |f| %>
+    <%= simple_form_for [@doc, @chat], html: {data: {turbo: false}} do |f| %>
       <div class="main-content d-flex">
         <div class="document-section">
             <% if params[:doc] %>
-              <%= f.input :doc_id, as: :hidden, input_html: { value: params[:doc] } %>
+              <%#= f.input :doc_id, as: :hidden, input_html: { value: params[:doc] } %>
               <% selected_doc = Doc.find(params[:doc]) %>
               <div class="instruction-card">
                 <div class="instruction">
