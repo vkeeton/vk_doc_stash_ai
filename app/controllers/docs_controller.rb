@@ -35,6 +35,7 @@ class DocsController < ApplicationController
 
   def create
     @doc = Doc.new(doc_params)
+    # raise
     @doc.user = current_user
     authorize @doc
 
@@ -86,7 +87,7 @@ class DocsController < ApplicationController
   private
 
   def doc_params
-    params.require(:doc).permit(:doc_asset)
+    params.require(:doc).permit(:doc_asset, :image)
   end
 
   def chat_params
