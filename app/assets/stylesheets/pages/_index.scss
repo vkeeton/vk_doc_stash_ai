@@ -1,7 +1,7 @@
 // app/assets/stylesheets/docs.scss
 
 html, body {
-  height: 100vh;
+  // height: 100vh;
 }
 
 /* Styles for the DocsStash page */
@@ -9,6 +9,7 @@ html, body {
   font-family: 'Poppins', sans-serif;
   // margin-right: 16px;
   margin-left: 18px;
+  width: 100vw;
 }
 
 .doc-upload {
