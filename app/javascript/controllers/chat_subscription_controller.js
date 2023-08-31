@@ -37,14 +37,14 @@ export default class extends Controller {
     if (aiMessages.length > 0) {
       const reportData = aiMessages.map(message => {
         const username = "DocStashAI";
-        const timestamp = message.querySelector("small i").textContent;
+        // const timestamp = message.querySelector("small i").textContent;
         const content = message.querySelector("p").textContent;
-        return { username, timestamp, content };
+        return { username, content };
       });
 
       // Convert reportData to plain text format
       const plainTextContent = reportData.map(entry => {
-        return `${entry.timestamp}\n${entry.content.replace(/\n/g, " ")}\n\n`;
+        return `${entry.content.replace(/\n/g, " ")}\n\n`;
       }).join("");
 
       // Create a Blob containing the plain text data
