@@ -1,5 +1,9 @@
 // app/assets/stylesheets/docs.scss
 
+html, body {
+  height: 100%;
+}
+
 /* Styles for the DocsStash page */
 .content-container {
   display: flex;
@@ -162,7 +166,7 @@ p {
   height: 160px;
   background-color: #f0bbff;
   background-image: linear-gradient(238deg, #f0bbff 0%, #f280e9 23%, #7485ff 100%);
-  box-shadow: 10px 10px 5px #d0cfcfa1;
+  box-shadow: -10px 12px 10px #d0cfcfa1;
   border: none;
   /* Add hover effect */
   transition: transform 0.3s ease-in-out;
