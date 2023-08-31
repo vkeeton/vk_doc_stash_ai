@@ -4,15 +4,15 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["show"]
 
-  showText() {
-    // this.showTarget.classList.add("hover-show")
-    this.showTarget.classList.remove("d-none")
+  // showText() {
+  //   // this.showTarget.classList.add("hover-show")
+  //   this.showTarget.classList.remove("d-none")
 
 
-  };
+  // };
 
-  hideText() {
-    // this.showTarget.classList.remove("hover-show")
-    this.showTarget.classList.add("d-none")
-  };
+  // hideText() {
+  //   // this.showTarget.classList.remove("hover-show")
+  //   this.showTarget.classList.add("d-none")
+  // };
 }

@@ -15,11 +15,15 @@
 
   /* Nested rules for children of .container.chatroom */
   .message {
-    padding: 8px;
     margin: 4px;
     border-radius: 8px;
     display: inline-block;
     max-width: 70%;
+    margin-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 4px;
+    padding-top: 2px;
   }
 
   .user-message {
@@ -34,6 +38,7 @@
     background-color: #D6A9F2;
     align-self: flex-start;
     text-align: left;
+    margin-left: 8px;
   }
 
   .input-section {
@@ -53,6 +58,7 @@
 
     textarea.form-control {
       width: 100%;
+      height: 48px;
     }
 
     button.btn {
@@ -63,7 +69,7 @@
       width: 100%;
       max-width: 100%;
       box-sizing: border-box;
-      border-radius: 8px;
+      border-radius: 26px;
       padding: 10px 15px;
       border: 1px solid #b5b5b5;
       font-size: 16px;
@@ -133,6 +139,17 @@
   flex-direction: column;
 }
 
+.messages::-webkit-scrollbar {
+  background: #E0E0E0;
+  width: 8px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: #262a4147;
+  border-radius: 78px;
+  height: 132px;
+}
+
 /* Styling for input section */
 .input-section {
   width: 100%;
@@ -146,18 +163,22 @@
 }
 
 /* Text color */
-.message i, .message strong, .message p {
+.message p {
   color: #262A41;
 }
 
 .message i {
-  color: rgb(79, 78, 78);
+  color: #262a4180;
 }
 
-.message strong {
-  color: rgb(43, 42, 42);
+.message small {
+color: #262a4180;
+
 }
 
+// .message strong {
+//   color: rgb(43, 42, 42);
+// }
 .chat-controls {
   display: flex;
   justify-content: space-between; /* This will make the button take up all available space */
