@@ -147,6 +147,7 @@
 .messages::-webkit-scrollbar-thumb {
   background: #262a4147;
   border-radius: 78px;
+  height: 132px;
 }
 
 /* Styling for input section */
@@ -162,7 +163,7 @@
 }
 
 /* Text color */
-.message i, .message strong, .message p {
+.message p {
   color: #262A41;
 }
 
@@ -172,8 +173,9 @@
 
 .message small {
 color: #262a4180;
+
 }
 
-.message strong {
-  color: rgb(43, 42, 42);
-}
+// .message strong {
+//   color: rgb(43, 42, 42);
+// }
