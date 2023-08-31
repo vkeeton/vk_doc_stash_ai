@@ -97,6 +97,7 @@
   // Styling for the chat info icon
   .chat-info {
     align-items: baseline;
+    height: 30px;
 
     i {
       color: #9E9B9A;
@@ -105,12 +106,19 @@
 
     p {
       font-size: 13px;
-      color: #9E9B9A;
     }
 
     .highlighted-text {
       color: #262a41b0;
     }
+
+    // .hover-show {
+    //   color: #371408;
+    // }
+
+    // .hover-hide {
+    //   color: #E0E0E0;
+    // }
   }
 }
 
