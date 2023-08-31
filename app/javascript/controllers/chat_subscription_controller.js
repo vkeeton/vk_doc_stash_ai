@@ -30,4 +30,42 @@ export default class extends Controller {
     const form = event.target
     form.reset()
   }
+
+  generateReport() {
+    const aiMessages = Array.from(this.messagesTarget.getElementsByClassName("ai-message"));
+
+    if (aiMessages.length > 0) {
+      const reportData = aiMessages.map(message => {
+        const username = "DocStashAI";
+        // const timestamp = message.querySelector("small i").textContent;
+        const content = message.querySelector("p").textContent;
+        return { username, content };
+      });
+
+      // Convert reportData to plain text format
+      const plainTextContent = reportData.map(entry => {
+        return `${entry.content.replace(/\n/g, " ")}\n\n`;
+      }).join("");
+
+      // Create a Blob containing the plain text data
+      const blob = new Blob([plainTextContent], { type: "text/plain" });
+
+      // Create a URL for the Blob
+      const blobURL = URL.createObjectURL(blob);
+
+      // Create a download link
+      const downloadLink = document.createElement("a");
+      downloadLink.href = blobURL;
+      downloadLink.download = "report.txt"; // Change the filename as needed
+      downloadLink.textContent = "Download Report";
+
+      // Append the link to the DOM
+      const downloadSection = document.querySelector(".download-section"); // Replace with your element's selector
+      downloadSection.appendChild(downloadLink);
+    }
+  }
+
+
+
+
 }
