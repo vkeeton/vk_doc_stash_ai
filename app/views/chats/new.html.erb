@@ -1,16 +1,46 @@
-<div class="new-chat-container d-flex gap-3" >
-  <%= render 'shared/sidebar' %>
-  <div>
-  <h1>Create a new chat</h1>
-  <%= simple_form_for @chat do |f| %>
-    <%= f.input :chat_name, placeholder: 'Enter a name for your chat' %>
-    <p>Do you want to add a new document?</p>
-    <!-- Multi-select dropdown for selecting documents -->
-    <% if params[:doc] %>
-     <%= f.input :doc_id, as: :hidden, input_html:{ value: params[:doc]} %>
-    <% end %>
-    <%= f.collection_check_boxes :doc_ids, @docs, :id, :file_name %>
-    <%= f.submit "Create Chat", class: "btn btn-primary" %>
-  <% end %>
-  </div>
-</div>
+<%= turbo_frame_tag "new_chat_modal" do %>
+  <div class="modal-container" data-controller="modal" data-modal-target="newChatContainer">
+    <div class="new-chat-container d-flex gap-3" >
+    <%= simple_form_for [@doc, @chat], html: {data: {turbo: false}} do |f| %>
+      <div class="main-content d-flex">
+        <div class="document-section">
+            <% if params[:doc] %>
+              <%#= f.input :doc_id, as: :hidden, input_html: { value: params[:doc] } %>
+              <% selected_doc = Doc.find(params[:doc]) %>
+              <div class="instruction-card">
+                <div class="instruction">
+                  <h3 class="instruction-title">Instruction</h3>
+                  <h4 class="sub-title">Create a chatroom to talk to your docs</h4>
+                  <ul class="instruction-list">
+                    <li>If you want to communicate with the only selected file, name chatroom first and then click the button to start</li>
+                    <li>If you want to communicate with multiple files, select from the avaliable documents on the right side, then name chatroom and click the button to start</li>
+                  </ul>
+                </div>
+              </div>
+              <p>You have selected file: <strong class="selected-file"><%= selected_doc.file_name %></strong></p>
+            <% end %>
+        </div>
+        <div class="doclist-section">
+          <div class="checkbox-list">
+            <p>Do you want to add other documents?</p>
+            <p>Available Documents</p>
+            <%= f.collection_check_boxes :doc_ids, @docs, :id, :file_name do |b| %>
+              <div class="checkbox-item">
+                <%= b.check_box + b.text %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="chat-input">
+            <div class="input-field">
+              <%= f.input :chat_name, placeholder: 'Enter a name for your chat' %>
+            </div>
+            <div class="button-field">
+              <%= f.submit "Create a chatroom", class: "btn btn-primary" %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+    </div>
+   </div>
+<% end %>

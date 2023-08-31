@@ -1,89 +1,116 @@
-// .selected-file {
-//   color: blue;
+// .tag-selector {
+//   position: absolute;
+//   transform: scale(0);
 // }
 
-// .checkbox-item {
-//   margin-bottom: 10px;
+// .tag-item {
+//   display: inline-block;
+//   font-size: 0.7rem;
+//   border-radius: 50rem;
+//   padding: 0.1rem 0.5rem;
+//   background-color: #ECEAFF;
+//   color:#7E73FF;
+//   border: 1px solid #7E73FF;
+//   margin-right: 0.6rem;
+//   margin-bottom: 0.4rem;
+//   cursor: pointer;
 // }
 
-// .new-chat-container {
-//   display: flex;
-//   margin-top: 50px;
-// }
-
-// .main-content {
-//   flex: 1;
-// }
-
-// .document-section {
-//   width: 600px;
-//   margin-left: 80px;
-// }
-
-// .doclist-section {
-//   margin-left: 30px;
-//   width: 600px;
-// }
-
-// .chat-input {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: flex-start;
-// }
-
-// .input-field input[type="text"],
-// .button-field .btn-primary {
-//   width: 100%;
-//   box-sizing: border-box;
-//   margin-bottom: 10px;
-// }
-
-// .input-field {
-//   width: 60%;
-// }
-
-// .instruction-card {
-//   position: relative;
-//   padding: 20px;
-//   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-//   border-radius: 10px;
-//   width: 400px;
-//   height: 300px;
-//   background-color: #f0bbff;
-//   background-image: linear-gradient(238deg, #f0bbff 0%, #f280e9 23%, #7485ff 100%);
-//   box-shadow: 10px 10px 5px rgb(208, 207, 207);
-//   border: none;
-//   transition: transform 0.3s ease-in-out;
-//   margin-bottom: 20px;
-//   margin-top: 20px;
-//   text-align: center;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-// }
-
-// .instruction-title {
-//   font-size: 1.5rem;
+// .tag-selector:checked + .tag-item {
+//   background-color: #7E73FF;
 //   color: white;
-//   margin-bottom: 10px;
-//   font-weight: bold;
 // }
 
-// .sub-title {
-//   font-size: 1.2rem;
-//   color: white;
-//   margin-bottom: 20px;
-//   font-weight: bold;
-// }
+.selected-file {
+  color: #7E73FF;
+}
 
-// .instruction-list {
-//   list-style-type: disc;
-//   padding-left: 20px;
-//   text-align: left;
-//   color: white;
-//   font-size: 1rem;
-// }
-// .instruction ul {
-//   list-style-type: disc;
-//   padding-left: 20px;
-// }
+.checkbox-item {
+  margin-bottom: 10px;
+}
+
+.new-chat-container {
+  margin-top: 50px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.document-section {
+  // width: 600px;
+  width:100%;
+  padding:10px;
+}
+
+.doclist-section {
+  width: 100%;
+  padding:10px;
+}
+
+.chat-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width:100%;
+  padding:10px;
+}
+
+.input-field input[type="text"],
+.button-field .btn-primary {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.input-field {
+  width: 60%;
+}
+
+.instruction-card {
+  position: relative;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 400px;
+  height: 300px;
+  background-color: #f0bbff;
+  background-image: linear-gradient(238deg, #f0bbff 0%, #f280e9 23%, #7485ff 100%);
+  box-shadow: 10px 10px 5px rgb(208, 207, 207);
+  border: none;
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.instruction-title {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.sub-title {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.instruction-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+  color: white;
+  font-size: 1rem;
+}
+.instruction ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
