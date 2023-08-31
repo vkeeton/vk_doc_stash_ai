@@ -1,14 +1,18 @@
-
-<div class="sidebar " style="position: sticky;">
-    <ul class="logos">
-      <li class="logo"><a href="/docs"><i class="fa-solid fa-house"></i></a></li>
-      <%# <li class="logo"><a href="/docs#show"><i class="fa-solid fa-file"></i></a></li> %>
-      <li class="logo"><a href="/chats"><i class="fa-solid fa-comments"></i></a></li>
-      <li class="logo"><a href="/settings"><i class="fa-solid fa-gear"></i></a></li>
-    </ul>
-    <ul class="logos">
-      <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>
-        <li id="logout" class="logo"><i class="fa-solid fa-right-from-bracket"></i></li>
-      <% end %>
-    </ul>
+<div class="sidebar flex-column d-flex justify-content-between" >
+  <ul class="icons">
+    <%= link_to docs_path do %>
+      <% current_page?(docs_path) ? icon_class = "active" : icon_class = "" %>
+      <li class="icon"><i class="fa-solid fa-house <%= icon_class %> "></i></li>
+    <% end %>
+    <%= link_to chats_path do %>
+      <% current_page?(chats_path) ? icon_class = "active" : icon_class = "" %>
+      <li class="icon"><i class="fa-solid fa-comments <%= icon_class %> "></i></li>
+    <% end %>
+    <li class="icon"><a href="/settings"><i class="fa-solid fa-gear "></i></a></li>
+  </ul>
+  <ul class="icons">
+    <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>
+      <li id="logout" class="icon"><i class="fa-solid fa-right-from-bracket"></i></li>
+    <% end %>
+  </ul>
 </div>
