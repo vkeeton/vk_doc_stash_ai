@@ -4,5 +4,5 @@ class Chat < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :doc_chats, dependent: :destroy
   has_many :docs, through: :doc_chats
-  attr_accessor :doc_id
+  # attr_accessor :doc_id
 end
