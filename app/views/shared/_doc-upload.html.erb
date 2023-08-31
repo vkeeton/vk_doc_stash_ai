@@ -9,10 +9,12 @@
       <%# <%= f.input :image,as: :file, direct_upload: true, data: { dropzone_target: 'input' } %>
       <%= f.input :doc_asset, as: :file, direct_upload: true, label: false, input_html: { class: "simple-form", data: { dropzone_target: 'input', direct_upload_url: "/rails/active_storage/direct_uploads" }  }%>
       <div class="dropzone-msg dz-message needsclick">
-        <h3 class="dropzone-msg-title">Drag here to upload or click here to browse</h3>
-        <span class="dropzone-msg-desc">2 MB file size maximum. Allowed file types png, jpg, txt.</span>
+      <i class="fa fa-upload" style="font-size:24px"></i>
+      <h3 >Drag and Drop Here</h3>
       </div>
     </div>
-    <%= f.button :submit, "Submit", input_html: { class: "simple-form" } %>
+    <div class="submit-button">
+      <%= f.button :submit, "Submit", input_html: { class: "simple-form" } %>
+    </div>
   <% end %>
 </div>
