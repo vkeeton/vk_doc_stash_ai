@@ -1,5 +1,5 @@
 <div class="container chatroom" data-controller="chat-subscription" data-chat-subscription-chat-id-value="<%= @chat.id %>">
-<div class="chat-info d-flex" data-controller="chat-icon" >
+<div class="chat-info d-flex justify-content-between" data-controller="chat-icon" >
   <i class="fa-regular fa-circle-question" data-action="mouseover->chat-icon#showText mouseleave->chat-icon#hideText"></i>
   <div data-chat-icon-target="show">
     <% if @chat.docs.count == 1 %>
@@ -11,6 +11,12 @@
     <% else %>
     <p> You're chatting in your '<%= @chat.chat_name.capitalize %>' session</p>
     <% end %>
+  </div>
+
+  <div class="chat-controls">
+    <button class="report-button" data-action="click->chat-subscription#generateReport">
+      <i class="fa-solid fa-file-circle-plus fa-lg"></i>
+    </button>
   </div>
 </div>
 
@@ -44,12 +50,12 @@
         wrapper_html: {class: "flex-grow-1"},
         input_html: {class: "form control" }
       %>
-      <%= f.submit "Send", class: "send-button" %>
+      <%= button_tag type: 'submit', class: 'send-button' do %>
+        <i class="fa-solid fa-circle-arrow-right fa-2xl"></i>
+      <% end %>
     <% end %>
   </div>
-  <div class="chat-controls">
-    <button class="report-button" data-action="click->chat-subscription#generateReport">Generate Report</button>
-  </div>
+
   <div class="download-section">
   </div>
 </div>
